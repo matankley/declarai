@@ -1,0 +1,1528 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="src/beginners-guide/">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.2.0-b1">
+    
+    
+      
+        <title>Declarai</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.83068744.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="css/extra.css">
+    
+      <link rel="stylesheet" href="css/termynal.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-YQ30DDKFS4"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-YQ30DDKFS4",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-YQ30DDKFS4",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Declarai" class="md-header__button md-logo" aria-label="Declarai" data-md-component="logo">
+      
+  <img src="img/Vendi-logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Declarai
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Declarai
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/vendi-ai/declarai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    vendi-ai/declarai
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Declarai" class="md-nav__button md-logo" aria-label="Declarai" data-md-component="logo">
+      
+  <img src="img/Vendi-logo.svg" alt="logo">
+
+    </a>
+    Declarai
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/vendi-ai/declarai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    vendi-ai/declarai
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Declarai
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Declarai
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Page contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Page contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-use-declarai" class="md-nav__link">
+    Why use Declarai?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-highlight" class="md-nav__link">
+    Feature highlight
+  </a>
+  
+    <nav class="md-nav" aria-label="Feature highlight">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-native-syntax" class="md-nav__link">
+    Python native syntax
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#support-python-typing-and-pydantic-models" class="md-nav__link">
+    Support Python typing and pydantic models
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chat-interface" class="md-nav__link">
+    Chat interface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-middlewares" class="md-nav__link">
+    Task Middlewares
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="src/beginners-guide/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Beginners guide
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_2">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Beginners guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="src/beginners-guide/simple-task/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simple task
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="src/beginners-guide/controlling-task-behavior/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Controlling task behavior
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="src/beginners-guide/debugging-tasks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Debugging tasks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="src/beginners-guide/recap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="src/features/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Features
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_3">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Features
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="src/features/chat/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chat
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_3_2">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Chat
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="src/features/chat/chat-memory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chat memory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="src/features/chat/controlling-chat-behavior/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Controlling chat behavior
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="src/features/chat/debugging-chat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Debugging chat
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="src/features/chat/customizing-chat-response/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customizing chat response
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="src/features/chat/advanced-initialization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advanced initialization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="src/features/magic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    magic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="src/features/multi-model-multi-provider/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    multi models and providers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="src/features/middlewares/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    middlewares
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            middlewares
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="src/features/evals/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Evals
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Evals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="src/best-practices/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Best practices
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Best practices
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="src/providers/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Providers
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_5">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Providers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="src/providers/openai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Openai
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="src/integrations/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Integrations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="src/changelog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Changelog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="src/contribute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contribute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Page contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Page contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-use-declarai" class="md-nav__link">
+    Why use Declarai?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-highlight" class="md-nav__link">
+    Feature highlight
+  </a>
+  
+    <nav class="md-nav" aria-label="Feature highlight">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-native-syntax" class="md-nav__link">
+    Python native syntax
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#support-python-typing-and-pydantic-models" class="md-nav__link">
+    Support Python typing and pydantic models
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chat-interface" class="md-nav__link">
+    Chat interface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-middlewares" class="md-nav__link">
+    Task Middlewares
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Declarai</h1>
+
+<p align="center">
+  <a href="https://vendi-ai.github.io/declarai/"><img src="./img/Logo-declarai.svg" alt="Declarai"></a>
+</p>
+<p align="center">
+    <em>Declarai, turning Python code into LLM tasks, easy to use, and production-ready.</em>
+</p>
+
+<hr />
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>Declarai turns your Python code into LLM tasks, utilizing python's native syntax, like type hints and docstrings,
+to instruct an AI model on what to do.</p>
+<p>Designed with a clear focus on developer experience, you simply write Python code as you normally would, and Declarai
+handles the rest.</p>
+<p><div class="highlight"><span class="filename">poem_generator.py</span><pre><span></span><code><span class="kn">from</span> <span class="nn">declarai</span> <span class="kn">import</span> <span class="n">Declarai</span>
+
+<span class="n">declarai</span> <span class="o">=</span> <span class="n">Declarai</span><span class="p">(</span><span class="n">provider</span><span class="o">=</span><span class="s2">&quot;openai&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-3.5-turbo&quot;</span><span class="p">)</span>
+
+<span class="nd">@declarai</span><span class="o">.</span><span class="n">task</span>
+<span class="k">def</span> <span class="nf">generate_poem</span><span class="p">(</span><span class="n">title</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Write a 4 line poem on the provided title</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">generate_poem</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Declarai, the declarative framework for LLMs&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</code></pre></div>
+  <div class="highlight"><pre><span></span><code><span class="go">&gt;&gt;&gt; Declarai, the AI framework,</span>
+<span class="go">... Empowers LLMs with declarative power,</span>
+<span class="go">... Efficiently transforming data and knowledge,</span>
+<span class="go">... Unlocking insights in every hour.</span>
+</code></pre></div></p>
+<hr />
+<h2 id="why-use-declarai">Why use Declarai?<a class="headerlink" href="#why-use-declarai" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Pythonic Interface to LLM:</strong> - Leverage your existing Python skills instead of spending unnecessary time creating complex prompts.</p>
+</li>
+<li>
+<p><strong>Lightweight:</strong> - Declarai is written almost solely in python 3.6 using only pydantic and openai SDKs, so there's no need to worry about dependency spaghetti.</p>
+</li>
+<li>
+<p><strong>Extendable:</strong> - Declarai is designed to be easily extendable, the interface is simple and accessible by design so
+  you can easily override or customize the behavior of the framework to your specific needs.</p>
+</li>
+<li>
+<p><strong>Type-Driven Prompt Design:</strong> - Through the application of Python's type annotations, 
+  Declarai constructs detailed prompts that guide Large Language Models (LLMs) to generate the desired output type.</p>
+</li>
+<li>
+<p><strong>Context-Informed Prompts via Docstrings:</strong> - Implement function docstrings to supply contextual data to LLMs, 
+  augmenting their comprehension of the designated task, thereby boosting their performance.</p>
+</li>
+<li>
+<p><strong>Automated Execution of LLM Tasks:</strong> - Declarai takes care of the execution code, letting you concentrate on the core business logic.</p>
+</li>
+</ul>
+<p>Utilizing Declarai leads to improved code readability, maintainability, and predictability.</p>
+<hr />
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>declarai
+
+<span class="go">---&gt; 100%</span>
+<span class="go">Done!</span>
+</code></pre></div>
+
+</div>
+
+<hr />
+<h2 id="feature-highlight">Feature highlight<a class="headerlink" href="#feature-highlight" title="Permanent link">&para;</a></h2>
+<h3 id="python-native-syntax">Python native syntax<a class="headerlink" href="#python-native-syntax" title="Permanent link">&para;</a></h3>
+<p>Integrating deeply into python's native syntax, declarai understands your code and generates the prompt accordingly.</p>
+<div class="highlight"><span class="filename">Simple Syntax</span><pre><span></span><code><span class="nd">@declarai</span><span class="o">.</span><span class="n">task</span> <span class="c1"># (1)!</span>
+<span class="k">def</span> <span class="nf">rank_by_severity</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span> <span class="c1"># (2)!</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Rank the severity of the provided message by it&#39;s urgency.</span>
+<span class="sd">    Urgency is ranked on a scale of 1-5, with 5 being the most urgent.</span>
+<span class="sd">    :param message: The message to rank</span>
+<span class="sd">    :return: The urgency of the message</span>
+<span class="sd">    &quot;&quot;&quot;</span> <span class="c1"># (3)!</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">rank_by_severity</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="s2">&quot;The server is down!&quot;</span><span class="p">))</span>
+<span class="c1">#&gt; 5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rank_by_severity</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="s2">&quot;How was your weekend?&quot;</span><span class="p">))</span>
+<span class="c1">#&gt; 1</span>
+</code></pre></div>
+<ol>
+<li>The <code>@declarai.task</code> decorator marks the function as a Declarai prompt task.</li>
+<li>The type hints <code>List[str]</code> are used to parse the output of the llm into a list of strings.</li>
+<li>The docstring represents the task's description which is used to generate the prompt.<ul>
+<li><code>description</code> - the context of the task</li>
+<li><code>:param</code> - The function's parameters and their description</li>
+<li><code>:return</code> - The output description</li>
+</ul>
+</li>
+</ol>
+<h3 id="support-python-typing-and-pydantic-models">Support Python typing and pydantic models<a class="headerlink" href="#support-python-typing-and-pydantic-models" title="Permanent link">&para;</a></h3>
+<p>Declarai will return a serialized object as defined by the type hints at runtime.
+<div class="highlight"><span class="filename">Builtins</span><pre><span></span><code><span class="nd">@declarai</span><span class="o">.</span><span class="n">task</span>
+<span class="k">def</span> <span class="nf">extract_phone_number</span><span class="p">(</span><span class="n">email_content</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Extract the phone numbers from the provided email_content</span>
+<span class="sd">    :param email_content: Text that represents the email content </span>
+<span class="sd">    :return: The phone numbers that are used in the email</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">extract_phone_number</span><span class="p">(</span><span class="n">email_content</span><span class="o">=</span><span class="s2">&quot;Hi, my phone number is 123-456-7890&quot;</span><span class="p">))</span>
+<span class="c1">#&gt; [&#39;123-456-7890&#39;]</span>
+</code></pre></div></p>
+<div class="highlight"><span class="filename">Builtins</span><pre><span></span><code><span class="nd">@declarai</span><span class="o">.</span><span class="n">task</span>
+<span class="k">def</span> <span class="nf">datetime_parser</span><span class="p">(</span><span class="n">raw_date</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">datetime</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parse the input into a valid datetime string of the format YYYY-mm-ddThh:mm:ss</span>
+<span class="sd">    :param raw_date: The provided raw date</span>
+<span class="sd">    :return: The parsed datetime output</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">datetime_parser</span><span class="p">(</span><span class="n">raw_date</span><span class="o">=</span><span class="s2">&quot;Janury 1st 2020&quot;</span><span class="p">))</span>
+<span class="c1">#&gt; 2020-01-01 00:00:00</span>
+</code></pre></div>
+<p><div class="highlight"><span class="filename">Pydantic models</span><pre><span></span><code><span class="k">class</span> <span class="nc">Animal</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">family</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">leg_count</span><span class="p">:</span> <span class="nb">int</span>
+
+
+<span class="nd">@declarai</span><span class="o">.</span><span class="n">task</span>
+<span class="k">def</span> <span class="nf">suggest_animals</span><span class="p">(</span><span class="n">location</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Animal</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create a list of numbers from 0 to 5</span>
+<span class="sd">    for each number, suggest a list of animals with that number of legs</span>
+<span class="sd">    :param location: The location where the animals can be found</span>
+<span class="sd">    :return: A list of animal leg count and for each count, the corresponding animals</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">suggest_animals</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s2">&quot;jungle&quot;</span><span class="p">))</span>
+<span class="c1">#&gt; {</span>
+<span class="c1">#       0: [</span>
+<span class="c1">#           Animal(name=&#39;snake&#39;, family=&#39;reptile&#39;, leg_count=0)</span>
+<span class="c1">#       ], </span>
+<span class="c1">#       2: [</span>
+<span class="c1">#           Animal(name=&#39;monkey&#39;, family=&#39;mammal&#39;, leg_count=2), </span>
+<span class="c1">#           Animal(name=&#39;parrot&#39;, family=&#39;bird&#39;, leg_count=2)</span>
+<span class="c1">#       ], </span>
+<span class="c1">#       4: [</span>
+<span class="c1">#          Animal(name=&#39;tiger&#39;, family=&#39;mammal&#39;, leg_count=4), </span>
+<span class="c1">#          Animal(name=&#39;elephant&#39;, family=&#39;mammal&#39;, leg_count=4)</span>
+<span class="c1">#       ]</span>
+<span class="c1"># }</span>
+</code></pre></div>
+<br></p>
+<h3 id="chat-interface">Chat interface<a class="headerlink" href="#chat-interface" title="Permanent link">&para;</a></h3>
+<p>Create chat interfaces with ease, simply by writing a class with docstrings</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Notice that <code>chat</code> is exposed under the <code>experimental</code> namespace, noting this interface is still work in progress.</p>
+</div>
+<p><div class="highlight"><pre><span></span><code><span class="nd">@declarai</span><span class="o">.</span><span class="n">experimental</span><span class="o">.</span><span class="n">chat</span>
+<span class="k">class</span> <span class="nc">CalculatorBot</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    You a calculator bot,</span>
+<span class="sd">    given a request, you will return the result of the calculation</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">send</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span> <span class="o">...</span>
+
+
+<span class="n">calc_bot</span> <span class="o">=</span> <span class="n">CalculatorBot</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">calc_bot</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="s2">&quot;1 + 1&quot;</span><span class="p">))</span>
+<span class="c1">#&gt; 2</span>
+</code></pre></div>
+<br></p>
+<h3 id="task-middlewares">Task Middlewares<a class="headerlink" href="#task-middlewares" title="Permanent link">&para;</a></h3>
+<p>Easy to use middlewares provided out of the box as well as the ability to easily create your own.</p>
+<p><div class="highlight"><span class="filename">Logging Middleware</span><pre><span></span><code><span class="nd">@declarai</span><span class="o">.</span><span class="n">task</span><span class="p">(</span><span class="n">middlewares</span><span class="o">=</span><span class="p">[</span><span class="n">LoggingMiddleware</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">extract_info</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Extract the phone number, name and email from the provided text</span>
+<span class="sd">    :param text: content to extract the info from</span>
+<span class="sd">    :return: The info extracted from the text</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">Declarai</span><span class="o">.</span><span class="n">magic</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">extract_info</span><span class="p">(</span>
+    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Hey jenny,&quot;</span>
+    <span class="s2">&quot;you can call me at 124-3435-132.&quot;</span>
+    <span class="s2">&quot;You can also email me at georgia@coolmail.com&quot;</span>
+    <span class="s2">&quot;Have a great week!&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</code></pre></div>
+Result:
+<div class="highlight"><pre><span></span><code><span class="go">{&#39;task_name&#39;: &#39;extract_info&#39;, &#39;llm_model&#39;: &#39;gpt-3.5-turbo-0301&#39;, &#39;template&#39;: &#39;{input_instructions}\n{input_placeholder}\n{output_instructions}&#39;, &#39;template_args&#39;: {&#39;input_instructions&#39;: &#39;Extract the phone number, name and email from the provided text&#39;, &#39;input_placeholder&#39;: &#39;Inputs:\ntext: {text}\n&#39;, &#39;output_instructions&#39;: &#39;The output should be a markdown code snippet formatted in the following schema, including the leading and trailing \&#39;```json\&#39; and \&#39;```\&#39;:\n```json\n{{\n    &quot;declarai_result&quot;: Dict[str, str]  # The info extracted from the text\n}}\n```&#39;}, &#39;prompt_config&#39;: {&#39;structured&#39;: True, &#39;multi_results&#39;: False, &#39;return_name&#39;: &#39;declarai_result&#39;, &#39;temperature&#39;: 0.0, &#39;max_tokens&#39;: 2000, &#39;top_p&#39;: 1.0, &#39;frequency_penalty&#39;: 0, &#39;presence_penalty&#39;: 0}, &#39;call_kwargs&#39;: {&#39;text&#39;: &#39;Hey jenny,you can call me at 124-3435-132.You can also email me at georgia@coolmail.comHave a great week!&#39;}, &#39;result&#39;: {&#39;phone_number&#39;: &#39;124-3435-132&#39;, &#39;name&#39;: &#39;jenny&#39;, &#39;email&#39;: &#39;georgia@coolmail.com&#39;}, &#39;time&#39;: 2.192906141281128}</span>
+<span class="go">{&#39;phone_number&#39;: &#39;124-3435-132&#39;, &#39;name&#39;: &#39;jenny&#39;, &#39;email&#39;: &#39;georgia@coolmail.com&#39;}</span>
+</code></pre></div></p>
+<p>We highly recommend you to go through the beginner's guide to get a better understanding of the library and its capabilities - <a href="./src/beginners-guide">Beginner's Guide</a></p>
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              Thanks for your feedback! Help us improve this page by using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+        
+          
+          <a href="src/beginners-guide/" class="md-footer__link md-footer__link--next" aria-label="Next: Tutorial - Beginners guide" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Tutorial - Beginners guide
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["tabs", "content.tooltips", "content.code.copy", "content.code.annotate", "navigation.indexes", "navigation.footer"], "search": "assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.4e31edb1.min.js"></script>
+      
+        
+          <script src="js/termynal.js"></script>
+        
+      
+        
+          <script src="js/custom.js"></script>
+        
+      
+        
+          <script src="js/tablesort.js"></script>
+        
+      
+        
+          <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+        
+      
+    
+  </body>
+</html>
