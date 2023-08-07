@@ -18,6 +18,10 @@ ModelsOpenai = Literal[
     "code-davinci-002",
 ]
 
+ProviderHuggingface = Literal["huggingface"]
+ProviderAI21 = Literal["ai21"]
+ModelsAI21 = Literal["j2-light", "j2-mid", "j2-ultra"]
+
 AllModels = Union[ModelsOpenai]
 
 
